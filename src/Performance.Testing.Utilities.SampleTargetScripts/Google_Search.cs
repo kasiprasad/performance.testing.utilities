@@ -10,7 +10,6 @@ namespace Performance.Testing.Utilities.SampleTargetScripts
         {
             var request = FluentRequest.Create("http://www.google.com/search").POST().WithFormPostParameter("q", "anything");
             yield return request;
-            request = null;
         }
     }
 }

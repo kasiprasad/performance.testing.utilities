@@ -39,7 +39,7 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Google_PageLoad.cs" />
+    <Compile Include="Google_Home_PageLoad.cs" />
     <Compile Include="Google_Search.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
