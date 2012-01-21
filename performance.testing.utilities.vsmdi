@@ -3,5 +3,9 @@
   <TestList name="Lists of Tests" id="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
     <RunConfiguration id="398e542a-8bf1-40e3-b620-3dde61cb96ea" name="Local" storage="local.testsettings" type="Microsoft.VisualStudio.TestTools.Common.TestRunConfiguration, Microsoft.VisualStudio.QualityTools.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   </TestList>
-  <TestList name="Benchmark" id="a3dee44f-db14-4659-9347-d94da2a922df" parentListId="8c43106b-9dc1-4907-a29f-aa66a61bf5b6" />
+  <TestList name="Benchmark" id="a3dee44f-db14-4659-9347-d94da2a922df" parentListId="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
+    <TestLinks>
+      <TestLink id="b5b13b9b-ebf5-4fd2-8120-6884bc221ac4" name="Google_Home_PageLoad" storage="app\performance.testing.utilities.harness\google_home_pageload.loadtest" type="Microsoft.VisualStudio.TestTools.WebStress.WebTestSuite, Microsoft.VisualStudio.QualityTools.LoadTest,   PublicKeyToken=b03f5f7f11d50a3a" />
+    </TestLinks>
+  </TestList>
 </TestLists>
