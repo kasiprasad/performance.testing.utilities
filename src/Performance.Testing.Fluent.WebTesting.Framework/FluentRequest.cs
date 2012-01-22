@@ -25,7 +25,8 @@ namespace Performance.Testing.Fluent.WebTesting.Framework
                               {
                                   Method = HTTPMethodType.GET.ToString(),
                                   ParseDependentRequests = parseDependentRequests,
-                                  FollowRedirects = followRedirects
+                                  FollowRedirects = followRedirects,
+                                  Encoding = System.Text.Encoding.GetEncoding("utf-8")
                               };
 
             return request

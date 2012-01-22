@@ -4,12 +4,14 @@ using Performance.Testing.Fluent.WebTesting.Framework;
 
 namespace Performance.Testing.Utilities.SampleTargetScripts
 {
-    public class Google_Search : WebTest
+    public class Google_Search : BaseWebTest
     {
         public override IEnumerator<WebTestRequest> GetRequestEnumerator()
         {
-            var request = FluentRequest.Create("http://www.google.com/search").POST().WithFormPostParameter("q", "anything");
+            var request = FluentRequest.Create("http://www.google.com/search")
+                .WithQueryStringParameter("q", "anything");
             yield return request;
+            request = null;
         }
     }
 }

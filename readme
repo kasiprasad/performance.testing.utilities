@@ -1,0 +1,12 @@
+Performance.Testing.Utilities
+
+Includes some tools helpful when working on performance testing using
+Visual Studio 2010 Web Performance Tests & Load Tests
+
+FluentRequest - A utility class with extension methods for 
+		Microsoft.VisualStudio.TestTools.WebTesting.WebTestRequest
+
+		i.e. - 	FluentRequest.Create("http://www.google.com")
+				.POST()
+				.WithJson(new { s = "search term" });
+
