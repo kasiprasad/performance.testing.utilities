@@ -96,6 +96,11 @@
       <DependentUpon>LoadTestingDatabase.dbml</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Framework\Data\Scripts\Reporting_GetRequestDetails.sql" />
+    <Content Include="Framework\Data\Scripts\Reporting_GetRequestsBySec.sql" />
+    <Content Include="Framework\Data\Scripts\Reporting_GetRequestSummary.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
