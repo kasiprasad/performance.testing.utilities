@@ -7,11 +7,12 @@ namespace Performance.Testing.Utilities.ReportConsole.Framework.DataTransfer
     {
         public List<LoadTestRun> LoadTestRuns { get; set; }
 
-        public Guid Id { get; set; }
-
+        public Guid Id { get; set; }        
         public DateTime DateCreated { get; set; }
 
         public string ApplicationName { get; set; }
         public string VersionNumber { get; set; }
+
+        public string VersionUrl { get; set; }
     }
 }

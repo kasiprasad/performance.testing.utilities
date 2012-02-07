@@ -4,6 +4,6 @@ namespace Performance.Testing.Utilities.ReportConsole.Framework.Parsers
 {
     public interface IReportParser
     {
-        Report Parse(string pathToDirectoryContainingReports, string applicationName);
+        Report Parse(string reportFilePath, string applicationName);
     }
 }

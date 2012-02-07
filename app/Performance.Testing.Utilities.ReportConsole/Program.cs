@@ -58,9 +58,9 @@ namespace Performance.Testing.Utilities.ReportConsole
 
                         if (!Directory.Exists(outputDirectory)) Directory.CreateDirectory(outputDirectory);
 
-                        var fileName = string.Format("{0}\\{1}_{2}_PerformanceAnalysisResult.json", outputDirectory, 
-                            report.DateCreated.ToString("yyyyMMddhhssff"),
-                            report.ApplicationName);
+                        var fileName = string.Format("{0}\\{1}_{2}_{3}_PerformanceAnalysisResult.json", outputDirectory,
+                            report.ApplicationName,
+                            report.VersionNumber.Replace(".", "_"));
 
                         using (var writer = File.CreateText(fileName))
                         {
@@ -75,7 +75,6 @@ namespace Performance.Testing.Utilities.ReportConsole
                     {
                         Console.WriteLine("Report Generation Failed.");
                         Console.WriteLine(ex);
-                        throw ex;
                     }
                 });
 
