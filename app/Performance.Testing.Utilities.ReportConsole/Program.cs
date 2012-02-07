@@ -57,7 +57,10 @@ namespace Performance.Testing.Utilities.ReportConsole
                         var serialized = JsonConvert.SerializeObject(report);
 
                         if (!Directory.Exists(outputDirectory)) Directory.CreateDirectory(outputDirectory);
-                        var fileName = string.Format("{0}\\{1}_PerformanceResult.json", outputDirectory, report.Id);
+
+                        var fileName = string.Format("{0}\\{1}_{2}_PerformanceAnalysisResult.json", outputDirectory, 
+                            report.DateCreated.ToString("yyyyMMddhhssff"),
+                            report.ApplicationName);
 
                         using (var writer = File.CreateText(fileName))
                         {

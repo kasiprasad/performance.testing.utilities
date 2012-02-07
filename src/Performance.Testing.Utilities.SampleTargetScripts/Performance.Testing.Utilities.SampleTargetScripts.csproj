@@ -39,25 +39,16 @@
     <Reference Include="Microsoft.CSharp" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Congress_PageLoad.cs" />
-    <Compile Include="Congress_Availabilities_PageLoad.cs" />
-    <Compile Include="ExampleContainingTwoRequests.cs" />
-    <Compile Include="Google_Home_PageLoad.cs" />
-    <Compile Include="Google_Search.cs" />
+    <Compile Include="VentOnIt_PageLoad.cs" />
+    <Compile Include="VentOnIt_Vents_PageLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Version.cs" />
-    <Compile Include="WebTest1Coded.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Performance.Testing.Fluent.WebTesting.Framework\Performance.Testing.Fluent.WebTesting.Framework.csproj">
       <Project>{B5A9131B-EEB0-4016-B87D-12EE4C94C957}</Project>
       <Name>Performance.Testing.Fluent.WebTesting.Framework</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="WebTest1.webtest">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
