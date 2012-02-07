@@ -31,7 +31,7 @@ namespace Performance.Testing.Utilities.Specs.FluentRequestSpecs
         It should_throw_an_exception_indicating_that_the_requests_method_was_not_POST = () =>
             {
                 sut.ShouldNotBeNull();
-                sut.Message.ShouldContain("You must have the Request's Method set to POST");
+                sut.Message.ShouldContain("You must have the Requests' METHOD set to POST");
             };
     }
 
@@ -42,7 +42,7 @@ namespace Performance.Testing.Utilities.Specs.FluentRequestSpecs
                                      .WithJson(new { Name = "Kasi Prasad", City = "New York" });
 
         It should_have_a_content_type_header_set_to_application_json =
-            () => sut.Headers.First(h => h.Name == "Content-Type").Value.ShouldEqual("application/json");
+            () => sut.Headers.First(h => h.Name == "Content-Type").Value.ShouldEqual("text/json");
 
         It should_have_a_string_http_body = () => sut.Body.ShouldBeOfType<StringHttpBody>();
 

@@ -1,8 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Performance.Testing.Utilities.Core", "src\Performance.Testing.Utilities.Core\Performance.Testing.Utilities.Core.csproj", "{D682E398-7610-467F-A48F-C2540AD3174D}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{40F39B4B-9459-4F7C-A06A-532E5FBE30D5}"
 	ProjectSection(SolutionItems) = preProject
 		Local.testsettings = Local.testsettings
@@ -24,7 +22,26 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Performance.Testing.Utiliti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Performance.Testing.Utilities.ReportConsole", "app\Performance.Testing.Utilities.ReportConsole\Performance.Testing.Utilities.ReportConsole.csproj", "{FEE21637-6F1B-4FE5-AE48-04B336F39C3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Performance.Testing.Utilities.ReportGenerator", "app\Performance.Testing.Utilities.ReportGenerator\Performance.Testing.Utilities.ReportGenerator.csproj", "{96718B37-4654-4F60-8065-29405B8E2466}"
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Performance.Testing.Utilities.ReportWebsite", "app\Performance.Testing.Utilities.ReportWebsite\", "{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Performance.Testing.Utilities.ReportWebsite"
+		Debug.AspNetCompiler.PhysicalPath = "app\Performance.Testing.Utilities.ReportWebsite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Performance.Testing.Utilities.ReportWebsite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Performance.Testing.Utilities.ReportWebsite"
+		Release.AspNetCompiler.PhysicalPath = "app\Performance.Testing.Utilities.ReportWebsite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Performance.Testing.Utilities.ReportWebsite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "4759"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -39,16 +56,6 @@ Global
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D682E398-7610-467F-A48F-C2540AD3174D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D682E398-7610-467F-A48F-C2540AD3174D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D682E398-7610-467F-A48F-C2540AD3174D}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{D682E398-7610-467F-A48F-C2540AD3174D}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{D682E398-7610-467F-A48F-C2540AD3174D}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{D682E398-7610-467F-A48F-C2540AD3174D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D682E398-7610-467F-A48F-C2540AD3174D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D682E398-7610-467F-A48F-C2540AD3174D}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{D682E398-7610-467F-A48F-C2540AD3174D}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{D682E398-7610-467F-A48F-C2540AD3174D}.Release|x86.ActiveCfg = Release|Any CPU
 		{B2DEB90A-49E9-43D8-B7F8-FE7FBD6DF70A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B2DEB90A-49E9-43D8-B7F8-FE7FBD6DF70A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2DEB90A-49E9-43D8-B7F8-FE7FBD6DF70A}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -99,26 +106,25 @@ Global
 		{FEE21637-6F1B-4FE5-AE48-04B336F39C3E}.Release|Mixed Platforms.Build.0 = Release|x86
 		{FEE21637-6F1B-4FE5-AE48-04B336F39C3E}.Release|x86.ActiveCfg = Release|x86
 		{FEE21637-6F1B-4FE5-AE48-04B336F39C3E}.Release|x86.Build.0 = Release|x86
-		{96718B37-4654-4F60-8065-29405B8E2466}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96718B37-4654-4F60-8065-29405B8E2466}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96718B37-4654-4F60-8065-29405B8E2466}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{96718B37-4654-4F60-8065-29405B8E2466}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{96718B37-4654-4F60-8065-29405B8E2466}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{96718B37-4654-4F60-8065-29405B8E2466}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96718B37-4654-4F60-8065-29405B8E2466}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96718B37-4654-4F60-8065-29405B8E2466}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{96718B37-4654-4F60-8065-29405B8E2466}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{96718B37-4654-4F60-8065-29405B8E2466}.Release|x86.ActiveCfg = Release|Any CPU
+		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}.Release|x86.ActiveCfg = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B2DEB90A-49E9-43D8-B7F8-FE7FBD6DF70A} = {1D339623-8652-4EBC-9DF5-62B0943E6BFC}
-		{D682E398-7610-467F-A48F-C2540AD3174D} = {1D339623-8652-4EBC-9DF5-62B0943E6BFC}
 		{B5A9131B-EEB0-4016-B87D-12EE4C94C957} = {1D339623-8652-4EBC-9DF5-62B0943E6BFC}
-		{FEE21637-6F1B-4FE5-AE48-04B336F39C3E} = {1D339623-8652-4EBC-9DF5-62B0943E6BFC}
 		{7528A566-B0A1-4C61-8C56-20E5E7F35AC5} = {9BB68EA6-BF6E-446E-8382-5F0058155D0A}
-		{96718B37-4654-4F60-8065-29405B8E2466} = {9BB68EA6-BF6E-446E-8382-5F0058155D0A}
+		{FEE21637-6F1B-4FE5-AE48-04B336F39C3E} = {9BB68EA6-BF6E-446E-8382-5F0058155D0A}
+		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2} = {9BB68EA6-BF6E-446E-8382-5F0058155D0A}
 	EndGlobalSection
 EndGlobal

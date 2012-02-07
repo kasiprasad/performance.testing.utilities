@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LoadTest2010" Class="LoadTestingDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN-SRV-08\SQLEXPRESS;Initial Catalog=LoadTest2010;Integrated Security=True" SettingsObjectName="Performance.Testing.Utilities.ReportConsole.Properties.Settings" SettingsPropertyName="LoadTest2010ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="dbo.Reporting_GetRequestSummary" Method="Reporting_GetRequestSummary">
+    <Parameter Name="LoadTestRunId" Parameter="loadTestRunId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Reporting_GetRequestSummaryResult">
+      <Column Name="TestCaseName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="ScenarioName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="RequestUri" Type="System.String" DbType="NVarChar(2048) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalRequests" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="AverageResponseTime" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="MinimumResponseTime" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="MaximumResponseTime" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Column Name="Percentile90" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Percentile95" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Percentile99" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Median" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="StandardDeviation" Type="System.Double" DbType="Float" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="dbo.Reporting_GetRequestsBySec" Method="Reporting_GetRequestsBySec">
+    <Parameter Name="LoadTestRunId" Parameter="loadTestRunId" Type="System.Int32" DbType="Int" />
+    <ElementType Name="Reporting_GetRequestsBySecResult">
+      <Column Name="TestCaseName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="ScenarioName" Type="System.String" DbType="NVarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="RequestUri" Type="System.String" DbType="NVarChar(2048) NOT NULL" CanBeNull="false" />
+      <Column Name="RequestsPerSec" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date1SecIncrement" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

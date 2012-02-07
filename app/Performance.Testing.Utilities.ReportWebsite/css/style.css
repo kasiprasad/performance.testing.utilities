@@ -1,0 +1,86 @@
+﻿body
+{
+    font-size: 0.7em !important;
+}
+
+table
+{
+    font-size: 11px !important;
+}
+
+.tab-content
+{
+    background-color: #fff;
+    width: 95%;
+    padding: 2%;
+    margin: 0 auto;
+    color: #000;
+}
+
+table
+{
+    padding: 0;
+    margin: 0;
+}
+
+table td
+{
+    padding: 3px;
+}
+
+thead
+{
+    font-weight: bold;
+    background-color: #eee;
+    font-size: 1.4em;
+}
+
+thead td
+{
+    padding: 3px;
+}
+
+table th
+{
+    text-align: left;
+    font-weight: bold;
+    background-color: #eee;
+    padding: 3px;
+}
+
+.flowGrid table
+{
+    margin: 10px;
+    width: 98%;
+}
+
+.flowGrid
+{
+    height: 400px;
+    overflow: auto;
+}
+
+
+.gridCell {
+    width: 45%;
+    float: left;
+    margin: 0 auto;
+}
+
+.right {
+    margin-left: 35px;
+}
+table.graph {
+    display: none;
+}
+
+table th h3 {
+    margin: 0;
+    padding: 5px 0;
+    text-decoration: underline;
+    font-size: 1.3em;
+}
+
+th.heading {
+    
+}

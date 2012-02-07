@@ -101,7 +101,7 @@ namespace Performance.Testing.Fluent.WebTesting.Framework
             var body = request.Body as FormPostHttpBody;
 
             if (body == null)
-                throw new Exception("You must have the Request's Method set to POST. Use POST() before attempting to add form post parameters");
+                throw new Exception("You must have the Requests' METHOD set to POST in order to add form post parameters. Use POST() before attempting to add form post parameters");
 
             body.FormPostParameters.Add(name, value, urlEncode);
             return request;

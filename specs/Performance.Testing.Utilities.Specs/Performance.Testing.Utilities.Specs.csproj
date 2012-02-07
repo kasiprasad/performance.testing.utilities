@@ -31,34 +31,41 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Machine.Specifications">
-      <HintPath>..\..\packages\Machine.Specifications.0.5.2.0\lib\Machine.Specifications.dll</HintPath>
+    <Reference Include="Machine.Specifications, Version=0.5.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Machine.Specifications.0.5.3.0\lib\Machine.Specifications.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
     <Reference Include="Newtonsoft.Json, Version=4.0.5.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FluentRequestSpecs.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportConsole\When_parsing_a_report.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\app\Performance.Testing.Utilities.ReportConsole\Performance.Testing.Utilities.ReportConsole.csproj">
+      <Project>{FEE21637-6F1B-4FE5-AE48-04B336F39C3E}</Project>
+      <Name>Performance.Testing.Utilities.ReportConsole</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\src\Performance.Testing.Fluent.WebTesting.Framework\Performance.Testing.Fluent.WebTesting.Framework.csproj">
       <Project>{B5A9131B-EEB0-4016-B87D-12EE4C94C957}</Project>
       <Name>Performance.Testing.Fluent.WebTesting.Framework</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\src\Performance.Testing.Utilities.Core\Performance.Testing.Utilities.Core.csproj">
-      <Project>{D682E398-7610-467F-A48F-C2540AD3174D}</Project>
-      <Name>Performance.Testing.Utilities.Core</Name>
-    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="ReportConsole\" />
+    <Content Include="ExampleReport.trx.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
