@@ -41,28 +41,18 @@
     <Reference Include="NDesk.Options">
       <HintPath>..\..\packages\NDesk.Options.0.2.1\lib\NDesk.Options.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\..\packages\Newtonsoft.Json.4.0.7\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Nustache.Core">
+      <HintPath>..\..\packages\Nustache.1.0.0.20110812\Net40\Nustache.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Framework\DataTransfer\LoadTestRequestPerSecondSummary.cs" />
-    <Compile Include="Framework\DataTransfer\LoadTestRequestSummary.cs" />
-    <Compile Include="Framework\DataTransfer\LoadTestRun.cs" />
-    <Compile Include="Framework\DataTransfer\Report.cs" />
-    <Compile Include="Framework\Data\LoadTestingDatabase.designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LoadTestingDatabase.dbml</DependentUpon>
-    </Compile>
     <Compile Include="Framework\IMapper.cs" />
     <Compile Include="Framework\Mappers\LoadTestRunMapper.cs" />
     <Compile Include="Framework\Parsers\IReportParser.cs" />
@@ -79,11 +69,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
-    <None Include="Framework\DataTransfer\Model.cd" />
-    <None Include="Framework\Data\LoadTestingDatabase.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>LoadTestingDatabase.designer.cs</LastGenOutput>
+    <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config" />
@@ -96,14 +82,17 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Framework\Data\LoadTestingDatabase.dbml.layout">
-      <DependentUpon>LoadTestingDatabase.dbml</DependentUpon>
-    </None>
+    <ProjectReference Include="..\..\src\Performance.Testing.Utilities.DataTransfer\Performance.Testing.Utilities.DataTransfer.csproj">
+      <Project>{2E1D6C80-311E-4E2A-AB9B-35825BF78724}</Project>
+      <Name>Performance.Testing.Utilities.DataTransfer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\src\Performance.Testing.Utilities.Data\Performance.Testing.Utilities.Data.csproj">
+      <Project>{BD6F77D0-79EF-4866-AD88-9C9801CD1E81}</Project>
+      <Name>Performance.Testing.Utilities.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Framework\Data\Scripts\Reporting_GetRequestDetails.sql" />
-    <Content Include="Framework\Data\Scripts\Reporting_GetRequestsBySec.sql" />
-    <Content Include="Framework\Data\Scripts\Reporting_GetRequestSummary.sql" />
+    <EmbeddedResource Include="index.html.template" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -65,7 +65,7 @@ namespace Performance.Testing.Utilities.ReportConsole.Framework.Mappers
 
             var result = new LoadTestRun
                              {
-                                 Id = testRunId,
+                                 //Id = testRunId.ToString(),
                                  RunId = runId,
                                  TestName = r.Attribute("testName").Value,
                                  StartTime = DateTime.Parse(r.Attribute("startTime").Value).ToString(),

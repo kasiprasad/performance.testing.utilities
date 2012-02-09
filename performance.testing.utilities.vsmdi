@@ -5,6 +5,7 @@
   </TestList>
   <TestList name="STAGING" id="a3dee44f-db14-4659-9347-d94da2a922df" parentListId="8c43106b-9dc1-4907-a29f-aa66a61bf5b6">
     <TestLinks>
+      <TestLink id="d44f3246-35dd-4aad-8110-7959a979f4d2" name="VentOnIt_CustomerTrafficSimulation" storage="app\performance.testing.utilities.harness\ventonit_customertrafficsimulation.loadtest" type="Microsoft.VisualStudio.TestTools.WebStress.WebTestSuite, Microsoft.VisualStudio.QualityTools.LoadTest,   PublicKeyToken=b03f5f7f11d50a3a" />
       <TestLink id="77502aa3-5860-40de-8adf-06769795f950" name="VentOnIt_Home_PageLoad" storage="app\performance.testing.utilities.harness\ventonit_home_pageload.loadtest" type="Microsoft.VisualStudio.TestTools.WebStress.WebTestSuite, Microsoft.VisualStudio.QualityTools.LoadTest,   PublicKeyToken=b03f5f7f11d50a3a" />
       <TestLink id="f990f064-625a-478e-9ba1-841474de2a46" name="VentOnIt_Vents_PageLoad" storage="app\performance.testing.utilities.harness\ventonit_vents_pageload.loadtest" type="Microsoft.VisualStudio.TestTools.WebStress.WebTestSuite, Microsoft.VisualStudio.QualityTools.LoadTest,   PublicKeyToken=b03f5f7f11d50a3a" />
       <TestLink id="37f5baa8-3580-3284-d610-35ac5df41283" name="Version" storage="src\performance.testing.utilities.sampletargetscripts\bin\debug\performance.testing.utilities.sampletargetscripts.dll" type="Microsoft.VisualStudio.TestTools.WebStress.CodedWebTestElement, Microsoft.VisualStudio.QualityTools.LoadTest,   PublicKeyToken=b03f5f7f11d50a3a" />

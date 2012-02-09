@@ -24,7 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Performance.Testing.Utiliti
 EndProject
 Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Performance.Testing.Utilities.ReportWebsite", "app\Performance.Testing.Utilities.ReportWebsite\", "{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}"
 	ProjectSection(WebsiteProperties) = preProject
-		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv3.5"
+		ProjectReferences = "{BD6F77D0-79EF-4866-AD88-9C9801CD1E81}|Performance.Testing.Utilities.Data.dll;{2E1D6C80-311E-4E2A-AB9B-35825BF78724}|Performance.Testing.Utilities.DataTransfer.dll;"
 		Debug.AspNetCompiler.VirtualPath = "/Performance.Testing.Utilities.ReportWebsite"
 		Debug.AspNetCompiler.PhysicalPath = "app\Performance.Testing.Utilities.ReportWebsite\"
 		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Performance.Testing.Utilities.ReportWebsite\"
@@ -42,6 +43,10 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Performance.Testing.Utiliti
 		VWDPort = "4759"
 		DefaultWebSiteLanguage = "Visual C#"
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Performance.Testing.Utilities.DataTransfer", "src\Performance.Testing.Utilities.DataTransfer\Performance.Testing.Utilities.DataTransfer.csproj", "{2E1D6C80-311E-4E2A-AB9B-35825BF78724}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Performance.Testing.Utilities.Data", "src\Performance.Testing.Utilities.Data\Performance.Testing.Utilities.Data.csproj", "{BD6F77D0-79EF-4866-AD88-9C9801CD1E81}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -116,6 +121,26 @@ Global
 		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
 		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
 		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2}.Release|x86.ActiveCfg = Debug|Any CPU
+		{2E1D6C80-311E-4E2A-AB9B-35825BF78724}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E1D6C80-311E-4E2A-AB9B-35825BF78724}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E1D6C80-311E-4E2A-AB9B-35825BF78724}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{2E1D6C80-311E-4E2A-AB9B-35825BF78724}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{2E1D6C80-311E-4E2A-AB9B-35825BF78724}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{2E1D6C80-311E-4E2A-AB9B-35825BF78724}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E1D6C80-311E-4E2A-AB9B-35825BF78724}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E1D6C80-311E-4E2A-AB9B-35825BF78724}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{2E1D6C80-311E-4E2A-AB9B-35825BF78724}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{2E1D6C80-311E-4E2A-AB9B-35825BF78724}.Release|x86.ActiveCfg = Release|Any CPU
+		{BD6F77D0-79EF-4866-AD88-9C9801CD1E81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD6F77D0-79EF-4866-AD88-9C9801CD1E81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD6F77D0-79EF-4866-AD88-9C9801CD1E81}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{BD6F77D0-79EF-4866-AD88-9C9801CD1E81}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{BD6F77D0-79EF-4866-AD88-9C9801CD1E81}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BD6F77D0-79EF-4866-AD88-9C9801CD1E81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD6F77D0-79EF-4866-AD88-9C9801CD1E81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD6F77D0-79EF-4866-AD88-9C9801CD1E81}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{BD6F77D0-79EF-4866-AD88-9C9801CD1E81}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{BD6F77D0-79EF-4866-AD88-9C9801CD1E81}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -123,6 +148,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B2DEB90A-49E9-43D8-B7F8-FE7FBD6DF70A} = {1D339623-8652-4EBC-9DF5-62B0943E6BFC}
 		{B5A9131B-EEB0-4016-B87D-12EE4C94C957} = {1D339623-8652-4EBC-9DF5-62B0943E6BFC}
+		{2E1D6C80-311E-4E2A-AB9B-35825BF78724} = {1D339623-8652-4EBC-9DF5-62B0943E6BFC}
+		{BD6F77D0-79EF-4866-AD88-9C9801CD1E81} = {1D339623-8652-4EBC-9DF5-62B0943E6BFC}
 		{7528A566-B0A1-4C61-8C56-20E5E7F35AC5} = {9BB68EA6-BF6E-446E-8382-5F0058155D0A}
 		{FEE21637-6F1B-4FE5-AE48-04B336F39C3E} = {9BB68EA6-BF6E-446E-8382-5F0058155D0A}
 		{D6C52F32-8C49-48F3-BF8C-9086D8A91FC2} = {9BB68EA6-BF6E-446E-8382-5F0058155D0A}

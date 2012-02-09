@@ -30,7 +30,7 @@ namespace Performance.Testing.Utilities.ReportConsole.Framework.Parsers
                 throw new ApplicationException(string.Format("The report file you specified at {0} does not exist.", reportFilePath));
 
             var reportFile = XDocument.Load(reportFilePath);
-            var testRunId = Guid.Parse(reportFile.Root.Attribute("id").Value);
+            var testRunId = reportFile.Root.Attribute("id").Value;
 
             //identification of version number through the use of a web test within the load test run
             //we will expect a webtest within the test run list targeting the app version number
@@ -50,7 +50,7 @@ namespace Performance.Testing.Utilities.ReportConsole.Framework.Parsers
 
             var report = new Report()
                              {
-                                 Id = testRunId,
+                                 LoadTestDBId = testRunId,
                                  LoadTestRuns = loadTestRunMapper.MapFrom(reportFile.Root).ToList(),
                                  DateCreated = DateTime.Now,
                                  ApplicationName = applicationName,

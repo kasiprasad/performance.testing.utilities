@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Performance.Testing.Utilities.ReportConsole.Framework.Data;
+using Performance.Testing.Utilities.Data.LoadTestDB;
 using Performance.Testing.Utilities.ReportConsole.Framework.DataTransfer;
 
 namespace Performance.Testing.Utilities.ReportConsole.Framework.Services
