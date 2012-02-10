@@ -32,7 +32,7 @@ Performance.Testing.Utilities.ReportConsole
 	customizable model projected from the default Microsoft Visual Studio 2010 Load Test 
 	Database.
 
-	Tutorial:
+	TUTORIAL:
 
 	One of the required inputs to this tool is a Microsoft Visual Studio 2010 Test 
 	Report File (.trx). An easy way to reliably produce one of these using automation
@@ -46,7 +46,32 @@ Performance.Testing.Utilities.ReportConsole
 	more information on executing mstest.exe from the command line.
 
 	The important part of this step is to produce a TRX file containing at least one 
-	LoadTestResult xml element.
+	LoadTestRun and one inner LoadTestResult xml element.
+
+	IDENTIFYING THE APPLICATION-UNDER-TEST'S VERSION
+
+	In order to identify the application-under-test's version number, this program 
+	expects that the .vsdi and inner TestList you specified when executing 
+	mstest.exe includes not only the list of Load Tests you would like to exectute
+	during the run, but a single Web Performance Test pointed at your target 
+	application's Version.txt file (a Version.txt file is a convention we use on 
+	all of the web apps which we produce allowing us to make an HTTP Request to 
+	our web application and quickly learn the application's version number, for 
+	example 1.2.3.4-12345. We generate this file during the build process and 
+	place it in the web applications root output directory).
+
+	When this tool detects the presence of a WebTestResult (the result of executing
+	the Web Performance Test) in the resulting Test Report (.trx), it will assume
+	that this result is for your Version.txt file and it will attempt to parse
+	this result into a version number (the format expected is A.B.C.D-[CHANGESET]).
+
+	NOTE: All Web Performance Test's executed as part of your mstest.exe 
+	run will be ignored from the generated report. 
+	
+	If you do not include a Web Performance Test at all	this tool will skip 
+	version number identification and continue.
+	
+	ENHANCING VISUAL STUDIO 2010'S LOAD TEST REPORT
 
 	Next, we will need to add a few customized stored procedures to the Microsoft Visual 
 	Studio 2010 Load Test Database that comes out of the box with Microsoft Visual 
@@ -99,10 +124,11 @@ Performance.Testing.Utilities.ReportConsole
 
 	--url: ReportViewer Url	- the url of ReportViewer.aspx from the ReportWebsite
 
-	When executed this application will generate a Report model object and place it in 
+	When executed, this application will generate a Report model object and place it in 
 	MongoDB for usage by the ReportViewer application.
 	Additionally, it will generate an html file referencing the report generated compared
 	with its most recent execution
+
 -----------------------------------------------------------------------------------------
 -----------------------------------------------------------------------------------------
 Performance.Testing.Utilities.ReportWebsite
@@ -118,7 +144,7 @@ Performance.Testing.Utilities.ReportWebsite
 
 		-Displays a customized request centric load test report (based on a Test Run)
 
-	Tutorial:
+	TUTORIAL:
 
 	Simply create web.config ConnectionStrings entry named: 
 
@@ -131,7 +157,7 @@ Performance.Testing.Utilities.ReportWebsite
 
 	NOTE: This is a traditional web forms web site, built using .NET 3.5 however 
 	there is only a single feature implemented requiring server-side
-	.NET (a MongoDB query - finone on a specific LoadTestDBId). This site could 
+	.NET (a MongoDB query - findone on a specific LoadTestDBId). This site could 
 	very easily be ported to almost any .NET web based framework 	
 	(i.e. - MVC2/MVC3/MonoRails/Fubu.NET/ServiceStack.NET/etc) or any other 
 	platform supporting communication to MongoDb Server 

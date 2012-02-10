@@ -10,6 +10,9 @@ using Performance.Testing.Utilities.ReportConsole.Framework.Services;
 
 namespace Performance.Testing.Utilities.ReportConsole.Framework.Parsers
 {
+    //todo: refactor / SoC
+    //todo: add ioc injection
+
     public class ReportParser : IReportParser
     {
         private readonly IMapper<XElement, IEnumerable<LoadTestRun>> loadTestRunMapper;

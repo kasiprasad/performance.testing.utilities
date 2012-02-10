@@ -6,6 +6,9 @@ using System.Xml.Linq;
 using Performance.Testing.Utilities.ReportConsole.Framework.DataTransfer;
 using Performance.Testing.Utilities.ReportConsole.Framework.Services;
 
+//todo: refactor into separate mappers
+//todo: add ioc injection
+
 namespace Performance.Testing.Utilities.ReportConsole.Framework.Mappers
 {
     public class LoadTestRunMapper : IMapper<XElement, IEnumerable<LoadTestRun>>
@@ -44,6 +47,8 @@ namespace Performance.Testing.Utilities.ReportConsole.Framework.Mappers
         private LoadTestRun MapLoadTestRun(XElement r, Guid testRunId)
         {
             var runId = int.Parse(r.Attribute("runId").Value.ToString(CultureInfo.InvariantCulture));
+
+            //todo: Unit Test this - not sure how i sped past this
 
             //calculate total of all Tests Passed/Failed in this load test run
             //map test summaries
