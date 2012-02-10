@@ -1,12 +1,116 @@
-Performance.Testing.Utilities
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Performance.Testing.Fluent.WebTesting.Framework
 
-Includes some tools helpful when working on performance testing using
-Visual Studio 2010 Web Performance Tests & Load Tests
+	Includes some tools helpful when working on performance testing using
+	Visual Studio 2010 Web Performance Tests & Load Tests
 
-FluentRequest - A utility class with extension methods for 
-		Microsoft.VisualStudio.TestTools.WebTesting.WebTestRequest
+	FluentRequest - A utility class with extension methods for 
+			Microsoft.VisualStudio.TestTools.WebTesting.WebTestRequest
 
-		i.e. - 	FluentRequest.Create("http://www.google.com")
-				.POST()
-				.WithJson(new { s = "search term" });
+			i.e. - 	FluentRequest.Create("http://mywebsite/customers")
+					.POST()
+					.WithJson(new Customer 
+									{ 
+										FirstName = "John" ,
+										LastName = "Doe"
+									});
 
+	BaseWebTest - A very light base class which sets the PreAutheticate property to true on all requests
+
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Performance.Testing.Utilities.ReportConsole
+
+	This tool was designed specifically to parse Micorosoft Visual Studio 2010 TRX report files for the 
+	purpose of generating a customized request centric Load Test report model (perserved in a MongoDB) 
+	which can be displayed using the Performance.Testing.Utilities.ReportWebsite
+
+	This tool was intended to aid in the automation of web application performance testing during the continuous 
+	integration process by producing a more detailed and customizable model projected from the default Microsoft 
+	Visual 	Studio 2010 Load Test Database.
+
+	Tutorial:
+
+	You should probably start by executing your Microsoft Visual Studio 2010 Load Test(s) from the command line. 
+	Here's an example of my typical mstest.exe command (in addition to the default required parameters of 
+	mstest.exe, it's required that you generate a .trx file and know its containing directory location):
+
+	mstest.exe /testmetadata:performance.testing.utilities.vsmdi /testlist:Benchmark 
+	/resultsfile:TestResults\PerformanceTestingExample.Benchmark.trx /runconfig:local.testsettings
+	
+	Please see http://msdn.microsoft.com/en-us/library/ms182489%28v=vs.100%29.aspx for more information on executing
+	mstest.exe from the command line.
+
+	The important part of this step is to produce a TRX file containing at least one LoadTestResult xml element.
+
+	Next, we will need to add a few customized stored procedures to the Microsoft Visual Studio 2010 Load Test
+	Database that comes out of the box with Microsoft Visual Studio 2010 Ultimate Edition. These stored procedure
+	scripts can be located at:
+		
+		src\Performance.Testing.Utilities.Data\LoadTestDB\Scripts
+
+			src\Performance.Testing.Utilities.Data\LoadTestDB\Scripts\Reporting_GetRequestDetails.sql
+
+			src\Performance.Testing.Utilities.Data\LoadTestDB\Scripts\Reporting_GetRequestsBySec.sql
+
+			src\Performance.Testing.Utilities.Data\LoadTestDB\Scripts\Reporting_GetRequestSummary.sql
+
+	These scripts will make it possible to generate the request centric load test reports for
+	which this application was purposed (breaking down the number of requests per second so 
+	that it can be displayed easily, etc)
+
+	Next set the Performance.Testing.Utilities.ReportConsole.exe.config's ConnectionString definition for the name:
+	Performance.Testing.Utilities.ReportConsole.Properties.Settings.MongoLoadTestReportDatabaseConnectionString
+	(Ensure your MongoDB has a LoadTestReports database, the app will ensure the proper collections are availalble)
+
+	Execute Performance.Testing.Utilities.ReportConsole.exe 
+
+	Usage: 
+	
+	Performance.Testing.Utilities.ReportConsole.exe --i:[INPUT_DIRECTORY] --o:[OUTPUT_DIRECTORY] 
+	--app:[APPLICATION_NAME] --url:[ReportViewer_aspx_Web_Url]
+
+	--i: Input directory	- a directory containing .TRX report's (the tools will iterate through all available TRX files found
+							in this location
+
+	--o: Output directory	- a directory in which you would like a performance_testing_results.html file generated (the expectation
+							is that you will publish this file to your CI server as build artifact which when viewed in a browser
+							can be used to compare this report with the previous report from the ReportViewer website.
+
+	--app: Application Name	- used to display the application's name on the top of report's but most importantly, its used to identify
+							previous test runs against the same application (please be consistent with the application name parameter,
+							between test runs
+
+	--url: ReportViewer Url	- the url of ReportViewer.aspx from the ReportWebsite
+
+	When executed this application will generate a Report model object and place it in MongoDB for usage by the ReportViewer application.
+	Additionally, it will generate an html file referencing the report generated compared with its most recent execution
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------
+Performance.Testing.Utilities.ReportWebsite
+
+	This web site hosts the ReportViewer.aspx page which is designed as follows:
+
+		-Checks for the existence of a querystring parameter named:
+		 
+		 report 
+		 
+		 uses the value provided to search the LoadTestReports (MongoDB) database for a matching record (on LoadTestDBId)
+
+		-Displays a customized request centric load test report (based on a Test Run)
+
+	Tutorial:
+
+	Simply create web.config ConnectionStrings entry named: 
+
+	Performance.Testing.Utilities.ReportConsole.Properties.Settings.MongoLoadTestReportDatabaseConnectionString
+
+	(this ConnectionString value should most likely be the same you used when you executed: Performance.Testing.Utilities.ReportConsole.exe)
+
+	NOTE: This is a traditional web forms web site, built using .NET 3.5 however there is only a single feature implemented requiring server-side
+	.NET (a MongoDB query - finone on a specific LoadTestDBId). This site could very easily be ported to almost any .NET web based framework 	
+	(i.e. - MVC2/MVC3/MonoRails/Fubu.NET/ServiceStack.NET/etc) or any other platform supporting communication to MongoDb Server 
+	(Rails/PHP/Java/Node/etc). All of the rendering/view logic is implemented client-side using KnockoutJS (with JQuery & JQueryUI) (also wijmo
+	charts but I will probably need to migrate). 
+-------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------

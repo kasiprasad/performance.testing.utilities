@@ -36,15 +36,15 @@ namespace Performance.Testing.Utilities.ReportConsole
             options.Parse(args);
 
 
-            if (IsValid(applicationName, input, output))
+            if (IsValid(applicationName, input, output, reportSiteUrl))
                 ShowHelp();
             else
                 GenerateReport(input, applicationName, output, reportSiteUrl);
         }
 
-        static bool IsValid(string applicationName, string input, string output)
+        static bool IsValid(string applicationName, string input, string output, string reportSiteUrl)
         {
-            return string.IsNullOrEmpty(input) || string.IsNullOrEmpty(output) || string.IsNullOrEmpty(applicationName);
+            return (!string.IsNullOrEmpty(input) && !string.IsNullOrEmpty(output) && !string.IsNullOrEmpty(applicationName) && !string.IsNullOrEmpty(reportSiteUrl));
         }
 
         static void GenerateReport(string inputDirectory, string applicationName, string outputDirectory, string reportSiteUrl)
