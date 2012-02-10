@@ -70,9 +70,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LoadTestDB\readme.txt" />
-    <Content Include="LoadTestDB\Scripts\Reporting_GetRequestDetails.sql" />
-    <Content Include="LoadTestDB\Scripts\Reporting_GetRequestsBySec.sql" />
-    <Content Include="LoadTestDB\Scripts\Reporting_GetRequestSummary.sql" />
+    <Content Include="LoadTestDB\Scripts\Reporting_GetRequestDetails.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LoadTestDB\Scripts\Reporting_GetRequestsBySec.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="LoadTestDB\Scripts\Reporting_GetRequestSummary.sql">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config">

@@ -3,7 +3,7 @@ using Machine.Specifications;
 using Performance.Testing.Utilities.ReportConsole.Framework.DataTransfer;
 using Performance.Testing.Utilities.ReportConsole.Framework.Parsers;
 
-namespace Performance.Testing.Utilities.Specs.FluentRequestSpecs.ReportConsole
+namespace Performance.Testing.Utilities.Specs.ReportConsole
 {
     public class When_parsing_a_report
     {
