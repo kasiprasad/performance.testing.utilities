@@ -1,7 +1,7 @@
 ﻿LoadTestDB\Scripts 
 	- a series of sql scripts which need to be executed against your 
-	Visual Studio 2010 Load Test Database these scripts will create 
-	stored procedures which this console application will require for
+	Visual Studio 2010 Load Test Database. These scripts will create 
+	stored procedures which the ReportConsole application will require for
 	anayltic report generation
 
 LoadTestDB\LoadTestingDatabase.dbml
