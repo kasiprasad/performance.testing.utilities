@@ -82,20 +82,20 @@ Performance.Testing.Utilities.ReportConsole
 	--app:[APPLICATION_NAME] --url:[ReportViewer_aspx_Web_Url]
 
 	--i: Input directory	- a directory containing .TRX report's (the tools will 
-					iterate through all available TRX files found in this location
+	iterate through all available TRX files found in this location
 
 	--o: Output directory	- a directory in which you would like a 
-					performance_testing_results.html file generated (the 
-							expectation is that you will publish this file to your CI 
-							server as build artifact which when viewed in a browser
-							can be used to compare this report with the previous report
-							from the ReportViewer website.
+	performance_testing_results.html file generated (the 
+	expectation is that you will publish this file to your CI 
+	server as build artifact which when viewed in a browser
+	can be used to compare this report with the previous report
+	from the ReportViewer website.
 
 	--app: Application Name	- used to display the application's name on the top of 
-							report's but most importantly, its used to identify
-							previous test runs against the same application (please
-							be consistent with the application name parameter,
-							between test runs
+	report's but most importantly, its used to identify
+	previous test runs against the same application (please
+	be consistent with the application name parameter,
+	between test runs
 
 	--url: ReportViewer Url	- the url of ReportViewer.aspx from the ReportWebsite
 
