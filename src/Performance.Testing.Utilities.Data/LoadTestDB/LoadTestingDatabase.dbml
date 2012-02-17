@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="LoadTest2010" Class="LoadTestingDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN-SRV-08\SQLEXPRESS;Initial Catalog=LoadTest2010;Integrated Security=True" SettingsObjectName="Performance.Testing.Utilities.ReportConsole.Properties.Settings" SettingsPropertyName="LoadTest2010ConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN-SRV-08\SQLEXPRESS;Initial Catalog=LoadTest2010;Integrated Security=True" SettingsObjectName="Performance.Testing.Utilities.Data.Properties.Settings" SettingsPropertyName="LoadTest2010ConnectionString" Provider="System.Data.SqlClient" />
   <Function Name="dbo.Reporting_GetRequestSummary" Method="Reporting_GetRequestSummary">
     <Parameter Name="LoadTestRunId" Parameter="loadTestRunId" Type="System.Int32" DbType="Int" />
     <ElementType Name="Reporting_GetRequestSummaryResult">

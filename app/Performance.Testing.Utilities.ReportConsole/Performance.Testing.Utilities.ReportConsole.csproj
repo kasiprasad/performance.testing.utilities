@@ -38,11 +38,12 @@
     <Reference Include="Microsoft.VisualStudio.QualityTools.WebTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft\Microsoft.VisualStudio.QualityTools.WebTestFramework.dll</HintPath>
     </Reference>
-    <Reference Include="NDesk.Options">
+    <Reference Include="NDesk.Options, Version=0.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\NDesk.Options.0.2.1\lib\NDesk.Options.dll</HintPath>
     </Reference>
-    <Reference Include="Nustache.Core">
-      <HintPath>..\..\packages\Nustache.1.0.0.20110812\Net40\Nustache.Core.dll</HintPath>
+    <Reference Include="Nustache.Core, Version=1.12.2.12, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\Nustache.1.12.2.12\lib\net20\Nustache.Core.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />

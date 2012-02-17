@@ -139,8 +139,8 @@ Performance.Testing.Utilities.ReportWebsite
 		 
 		 report 
 		 
-		 uses the value provided to search the LoadTestReports (MongoDB) database for a
-		 matching record (on LoadTestDBId)
+		 uses the value provided to search the LoadTestReports (MongoDB) database for
+		 a matching record (on LoadTestDBId)
 
 		-Displays a customized request centric load test report (based on a Test Run)
 
