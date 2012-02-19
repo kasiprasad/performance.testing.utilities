@@ -7,7 +7,7 @@ namespace Performance.Testing.Utilities.ReportConsole.Framework.Data.ReportDB
 {
     public class ReportReader : IReportReader
     {
-        public Report Get(string loadTestDbId)
+        public Report   Get(string loadTestDbId)
         {
             var server = ServerFactory.Create();
             var db = server.GetDatabase("LoadTestReports");

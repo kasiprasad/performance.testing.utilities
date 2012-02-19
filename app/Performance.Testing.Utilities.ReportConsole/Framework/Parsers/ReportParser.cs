@@ -26,11 +26,7 @@ namespace Performance.Testing.Utilities.ReportConsole.Framework.Parsers
 
         public Report Parse(string reportFilePath, string applicationName)
         {
-            if (string.IsNullOrEmpty(reportFilePath))
-                throw new ArgumentNullException("reportFilePath", "target cannot be empty");
-            
-            if (!File.Exists(reportFilePath))
-                throw new ApplicationException(string.Format("The report file you specified at {0} does not exist.", reportFilePath));
+            ValidateReportFilePath(reportFilePath);
 
             var reportFile = XDocument.Load(reportFilePath);
             var testRunId = reportFile.Root.Attribute("id").Value;
@@ -46,8 +42,6 @@ namespace Performance.Testing.Utilities.ReportConsole.Framework.Parsers
                 .Element(ns + "WebTestResult")
                 .Element(ns + "WebTestResultFilePath").Value;
 
-            
-
             //extract the version number
             var versionNumber = ExtractVersionInfoFromWebTestResult(reportInputDirectory + "\\" + versionWebTestResultFilePath);
 
@@ -62,6 +56,16 @@ namespace Performance.Testing.Utilities.ReportConsole.Framework.Parsers
                              };
 
             return report;
+        }
+
+        static void ValidateReportFilePath(string reportFilePath)
+        {
+            if (string.IsNullOrEmpty(reportFilePath))
+                throw new ArgumentNullException("reportFilePath", "target cannot be empty");
+
+            if (!File.Exists(reportFilePath))
+                throw new ApplicationException(string.Format("The report file you specified at {0} does not exist.",
+                                                             reportFilePath));
         }
 
         VersionInfo ExtractVersionInfoFromWebTestResult(string value)
