@@ -1,8 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ReportViewer.aspx.cs" Inherits="ReportViewer" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="ReportComparer.aspx.cs" Inherits="ReportComparer" %>
 <html>
 <head>
     <meta charset="utf-8">
-    <title>Load Test Report</title>
+    <title>Load Test Report Comparison</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
 <body>
@@ -229,8 +229,10 @@
         };
 
         $(document).ready(function () {
-            var reportModel = <%= ReportModel %>;
-           perf.viewModel = ko.mapping.fromJS(reportModel);
+            var leftReportModel = <%= LeftReportModel %>;
+            var rightReportModel = <%= RightReportModel %>;
+           perf.viewModel.left = ko.mapping.fromJS(leftReportModel);
+           perf.viewModel.right = ko.mapping.fromJS(rightReportModel);
            ko.applyBindings(perf.viewModel);
 
            showCharts();

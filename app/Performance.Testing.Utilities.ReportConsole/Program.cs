@@ -36,7 +36,7 @@ namespace Performance.Testing.Utilities.ReportConsole
             options.Parse(args);
 
 
-            if (IsValid(applicationName, input, output, reportSiteUrl))
+            if (!IsValid(applicationName, input, output, reportSiteUrl))
                 ShowHelp();
             else
                 GenerateReport(input, applicationName, output, reportSiteUrl);
